@@ -38,11 +38,10 @@ Say the data is denoted as $x$. The data underlies under the distribution $p_d$.
 # Loss function 
 
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
-{{<math>}}
-$$ 
+$$ \begin{equation*}
 \mathcal{L}(\theta*g,\theta_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]\
+\end{equation*}
 $$
-{{<\math>}}
 $$ 
 \begin{equation*}
  = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]\
