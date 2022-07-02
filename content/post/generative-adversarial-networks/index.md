@@ -35,7 +35,7 @@ Why do we want both these parties to get trained? It's because we neither want t
 Notations
 === 
 
-Say the data is denoted as $x$. The data underlies under the distribution $p_d$. Let the easy to sample distribution be denoted as $p_z$, distribution transformed be denoted as $p_g$ and the parameters of Generator $G$ and Discriminator $D$ denoted by $$\theta_g$$ and $\theta_d$ respectively. The loss function is denoted as $\mathcal{L}$.
+Say the data is denoted as $x$. The data underlies under the distribution $p_d$. Let the easy to sample distribution be denoted as $p_z$, distribution transformed be denoted as $p_g$ and the parameters of Generator $G$ and Discriminator $D$ denoted by $\theta_g$ and $\theta_d$ respectively. The loss function is denoted as $\mathcal{L}$.
 
 Loss function 
 === 
