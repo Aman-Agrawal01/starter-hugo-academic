@@ -19,7 +19,10 @@ social:
     icon_pack: fab
 organizations: []
 education:
-  courses: []
+  courses:
+    - course: BS, Mathematics and Scientific Computing
+      institution: Indian Institute of Technology, Kanpur
+      year: ""
 email: ""
 superuser: true
 highlight_name: true
