@@ -13,11 +13,9 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-
 This blog requires the basic understanding of Probability and Statistics and Neural Nets. 
 
-Problem Statement
-===
+# Problem Statement
 
 Suppose, we are given the samples from a distribution and distribution is unknown to us. These samples could be anything from images to audio. Our aim is to generate more samples that looks like they came from the same distribution. In order to do so, we try to model a distribution that approximates the target distribution.
 
@@ -43,12 +41,12 @@ Loss function
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
 {{<math>}}
 $$ 
-\mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]\
+\mathcal{L}(\theta*g,\theta_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]\
 $$
 {{<\math>}}
 $$ 
 \begin{equation*}
- = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{z \sim p_Z(z)}[-log(1-D(G(z)))]\
+ = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]\
 \end{equation*}
 $$
 
@@ -56,23 +54,22 @@ The Generator $G$ and Discriminator $D$ play the two-player mini-max game with t
 
 $$ 
 \begin{equation*}
-    \max_{G} \min_{D} \mathcal{L}(\theta_g,\theta_d)
+    \max{G} \min{D} \mathcal{L}(\theta_g,\theta_d)
 \end{equation*}
 $$
 
-Analysis 
-=== 
+## Analysis 
 
 Let's see why this works. First, let's check what is the optimal discriminator for us. Fix teh Generator $G$. 
 
 $$ 
 \begin{equation*}
-  \mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]
+  \mathcal{L}(\thetag,\theta_d) = \mathbb{E}{x \sim pd(x)}\[-log(D(x))]+\mathbb{E}{x \sim p_g(x)}\[-log(1-D(x))]
 \end{equation*}
 $$
 $$ 
 \begin{equation*}
-  = \int_x p_d(x)(-log(D(x))) + p_g(x)(-log(1-D(x))) \,dx 
+  = \int_x p_d(x)(-log(D(x))) + p_g(x)(-log(1-D(x))) ,dx 
 \end{equation*}
 $$
 
@@ -88,11 +85,11 @@ Now, let's look at the Generator part.
 
 $$ 
 \begin{align*}
-  \mathcal{L}(\theta_g,\theta^\ast_d) &= \mathbb{E}_{x \sim p_d(x)}[-log(D^\ast(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D^\ast(x))] \\
+  \mathcal{L}(\theta*g,\theta^\ast_d) &= \mathbb{E}*{x \sim p*d(x)}\[-log(D^\ast(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(1-D^\ast(x))] \
 
-  &= \mathbb{E}_{x \sim p_d(x)}[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))] \\
+  &= \mathbb{E}*{x \sim p_d(x)}\[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(p_g(x))+log(p_d(x)+p_g(x))] \
 
-  &= 2*log(2) - D_{KL}(p_d||\frac{p_d+p_g}{2}) - D_{KL}(p_g||\frac{p_d+p_g}{2}) \\
+  &= 2*log(2) - D{KL}(p_d||\frac{p_d+p_g}{2}) - D{KL}(p_g||\frac{p_d+p_g}{2}) \
   &= 2*log(2) - 2*JSD(p_d||p_g)
 \end{align*}
 $$
@@ -102,4 +99,4 @@ where $D_{KL}$ and $JSD$ are KL Divergence and Jenson Shannon Divergence respect
 Drawback 
 === 
 
-The drawback of GANs is sometimes the Generator is able to generate only handful of samples and not able to produce variety of samples. This from of failure is known as Mode Collapse. 
+The drawback of GANs is sometimes the Generator is able to generate only handful of samples and not able to produce variety of samples. This from of failure is known as Mode Collapse.
