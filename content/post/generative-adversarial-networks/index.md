@@ -37,11 +37,11 @@ Say the data is denoted as $x$. The data underlies under the distribution $p_d$.
 
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
 
+{{<math>}}
 $$ 
-\begin{equation*}
-\mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]\
-\end{equation*}
+\mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]
 $$
+{{<\math>}}
 
 $$ 
 \begin{equation*}
