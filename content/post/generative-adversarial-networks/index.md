@@ -36,16 +36,18 @@ Say the data is denoted as $x$. The data underlies under the distribution $p_d$.
 # Loss function
 
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
-$$ \begin{equation*}
-\mathcal{L}(\theta*g,\theta_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]\
-\end{equation*}
+{{<math>}}
 $$
+\mathcal{L}(\theta*g,\theta_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]\
+$$
+{{<\math>}}
+{{<math>}}
 $$ 
 \begin{equation*}
  = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]\
 \end{equation*}
 $$
-
+{{<\math>}}
 The Generator $G$ and Discriminator $D$ play the two-player mini-max game with the loss function $\mathcal{L}$. Generator wants $D(G(z))$ to be close to 1 while Discriminator $D$ wants it to close to 0 and $D(x)$ close to 1. So, $G$ wants to maximise the $\mathcal{L}$ while $D$ wants to minimise $\mathcal{L}$.
 
 $$ 
