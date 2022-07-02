@@ -62,7 +62,7 @@ Let's see why this works. First, let's check what is the optimal discriminator f
 
 $$ 
 \begin{equation*}
-  \mathcal{L}(\thetag,\theta_d) = \mathbb{E}{x \sim pd(x)}\[-log(D(x))]+\mathbb{E}{x \sim p_g(x)}\[-log(1-D(x))]
+  \mathcal{L}(\theta_g,\theta_d) = \mathbb{E}{x \sim pd(x)}\[-log(D(x))]+\mathbb{E}{x \sim p_g(x)}\[-log(1-D(x))]
 \end{equation*}
 $$
 $$ 
