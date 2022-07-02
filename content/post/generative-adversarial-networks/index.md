@@ -87,24 +87,14 @@ $$
 Now, let's look at the Generator part. 
 
 $$ 
-\begin{equation*}
-  \mathcal{L}(\theta_g,\theta^\ast_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D^\ast(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D^\ast(x))]
-\end{equation*}
-$$
-$$ 
-\begin{equation*}
-  = \mathbb{E}_{x \sim p_d(x)}[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))]
-\end{equation*}
-$$
-$$ 
-\begin{equation*}
-  = 2*log(2) - D_{KL}(p_d||\frac{p_d+p_g}{2}) - D_{KL}(p_g||\frac{p_d+p_g}{2})
-\end{equation*}
-$$
-$$
-\begin{equation*}
-  = 2*log(2) - 2*JSD(p_d||p_g)
-\end{equation*}
+\begin{align*}
+  \mathcal{L}(\theta_g,\theta^\ast_d) &= \mathbb{E}_{x \sim p_d(x)}[-log(D^\ast(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D^\ast(x))] \\
+
+  &= \mathbb{E}_{x \sim p_d(x)}[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))] \\
+
+  &= 2*log(2) - D_{KL}(p_d||\frac{p_d+p_g}{2}) - D_{KL}(p_g||\frac{p_d+p_g}{2}) \\
+  &= 2*log(2) - 2*JSD(p_d||p_g)
+\end{align*}
 $$
 
 where $D_{KL}$ and $JSD$ are KL Divergence and Jenson Shannon Divergence respectively. So, $JSD$ is a non-negative quantity and attains zero when both the distributions are equal. Since, the Generator $G$ wants to maximise the loss function hence the global optimum will attain when $p_g = p_d$ and that's what we wanted.
