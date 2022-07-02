@@ -1,6 +1,6 @@
 ---
 title: Aman Agrawal
-role: ""
+role: Undergrad at IIT Kanpur
 bio: ""
 interests:
   - Quantum Computing
