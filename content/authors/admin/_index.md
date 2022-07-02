@@ -1,8 +1,7 @@
 ---
 title: Aman Agrawal
-role: Professor of Artificial Intelligence
-bio: My research interests include distributed robotics, mobile computing and
-  programmable matter.
+role: ""
+bio: ""
 interests:
   - Artificial Intelligence
   - Computational Linguistics
