@@ -41,11 +41,11 @@ Loss function
 === 
 
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
-
+{{<math>}}
 $$ 
 \mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]\
 $$
-
+{{<\math>}}
 $$ 
 \begin{equation*}
  = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{z \sim p_Z(z)}[-log(1-D(G(z)))]\
