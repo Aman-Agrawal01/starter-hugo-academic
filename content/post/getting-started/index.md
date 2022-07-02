@@ -24,7 +24,11 @@ In Query Model, our task is to compute the function $f(x1,x2,….,xn)$ by acce
 
 A quantum Oracle Ox takes qubit |i⟩ where i∈\[n] in binary representation and n∈N and ancilia qubit |b⟩ and gives |i⟩ and |b⊕xi⟩ where xi is the ith bit of input x.
 
-Ox|i⟩|b⟩=|i⟩|b⊕xi⟩=(−1)b∗xi|i⟩|b⟩
+{{< math >}}
+$$
+O_x \lvert i \rangle \lvert b \rangle = \lvert i \rangle \lvert b \oplus x_i \rangle = (-1)^{b*x_i} \lvert i \rangle \lvert b \rangle\\ 
+$$
+{{< /math >}}
 
 This type of oracle is known as bit-flip oracle. It’s simply a unitary reversible mapping of (i,b)↦(i,b⊕xi). Such type of mapping is used beacuse the operations we do in quantum computation should be unitary. An interesting fact, you can easily get back to (i,b) from (i,b⊕xi) by simply applying the same oracle Ox to (i,b⊕xi) due to the fact that xi⊕xi=0 for any xi.
 
