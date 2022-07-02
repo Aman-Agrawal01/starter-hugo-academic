@@ -89,7 +89,7 @@ $$
 
   &= \mathbb{E}*{x \sim p_d(x)}\[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(p_g(x))+log(p_d(x)+p_g(x))] \\
 
-  &= 2*log(2) - D{KL}(p_d||\frac{p_d+p_g}{2}) - D{KL}(p_g||\frac{p_d+p_g}{2}) \
+  &= 2*log(2) - D{KL}(p_d||\frac{p_d+p_g}{2}) - D{KL}(p_g||\frac{p_d+p_g}{2}) \\
   &= 2*log(2) - 2*JSD(p_d||p_g)
 \end{align*}
 $$
