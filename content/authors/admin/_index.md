@@ -3,7 +3,8 @@ title: Aman Agrawal
 role: ""
 bio: ""
 interests:
-  - QuantumComputing
+  - Quantum Computing
+  - Mathematical Finance
 social:
   - icon: envelope
     icon_pack: fas
