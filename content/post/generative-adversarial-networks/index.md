@@ -85,7 +85,7 @@ Now, let's look at the Generator part.
 
 $$ 
 \begin{align*}
-  \mathcal{L}(\theta*g,\theta^\ast_d) &= \mathbb{E}*{x \sim p*d(x)}\[-log(D^\ast(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(1-D^\ast(x))] \
+  \mathcal{L}(\theta*g,\theta^\ast_d) &= \mathbb{E}*{x \sim p*d(x)}\[-log(D^\ast(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(1-D^\ast(x))] \\
 
   &= \mathbb{E}*{x \sim p_d(x)}\[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(p_g(x))+log(p_d(x)+p_g(x))] \\
 
