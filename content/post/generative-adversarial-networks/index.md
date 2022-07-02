@@ -21,7 +21,6 @@ Suppose, we are given the samples from a distribution and distribution is unknow
 
 # Basics
 
-
 Adversarial refers to conflict/opposition. So, GANs consists of 'adversarial' training between two parties (in our case, the parties would be neural nets) such that we will be able to 'generate' new samples from the data. Those parties are Generator and Discriminator. 
 
 The work of the Generator is to transform a easy to sample distribution (like a D-dimensional Normal Distribution etc.) to a probability distribution that we want as close as the target distribution. Discriminator is a Binary Classifier which gives the probability whether the sample came from the data. So, both these parties conflict with each other in such a way so that the Generator tries to generate more realistic samples by the feedback that Discriminator gives on the samples. 
@@ -31,11 +30,10 @@ So, this is some kind of Police-Scammer case, where Scammer (Generator) tries to
 Why do we want both these parties to get trained? It's because we neither want the tough Discriminator which won't help Generator to progress nor a poor Discriminator by which Generator won't produce realistic samples. 
 
 ## Notations
- 
 
 Say the data is denoted as $x$. The data underlies under the distribution $p_d$. Let the easy to sample distribution be denoted as $p_z$, distribution transformed be denoted as $p_g$ and the parameters of Generator $G$ and Discriminator $D$ denoted by $\theta_g$ and $\theta_d$ respectively. The loss function is denoted as $\mathcal{L}$.
 
-# Loss function 
+# Loss function
 
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
 $$ \begin{equation*}
@@ -56,9 +54,9 @@ $$
 \end{equation*}
 $$
 
-## Analysis 
+## Analysis
 
-Let's see why this works. First, let's check what is the optimal discriminator for us. Fix teh Generator $G$. 
+Let's see why this works. First, let's check what is the optimal discriminator for us. Fix the Generator $G$. 
 
 $$ 
 \begin{equation*}
@@ -83,18 +81,17 @@ Now, let's look at the Generator part.
 
 $$ 
 \begin{align*}
-  \mathcal{L}(\theta*g,\theta^\ast_d) &= \mathbb{E}*{x \sim p*d(x)}\[-log(D^\ast(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(1-D^\ast(x))] \\
+  \mathcal{L}(\theta*g,\theta^\ast_d) &= \mathbb{E}*{x \sim p*d(x)}\[-log(D^\ast(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(1-D^\ast(x))] \
 
-  &= \mathbb{E}*{x \sim p_d(x)}\[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(p_g(x))+log(p_d(x)+p_g(x))] \\
+  &= \mathbb{E}*{x \sim p_d(x)}\[-log(p_d(x))+log(p_d(x)+p_g(x))]+\mathbb{E}*{x \sim p_g(x)}\[-log(p_g(x))+log(p_d(x)+p_g(x))] \
 
-  &= 2*log(2) - D{KL}(p_d||\frac{p_d+p_g}{2}) - D{KL}(p_g||\frac{p_d+p_g}{2}) \\
+  &= 2*log(2) - D{KL}(p_d||\frac{p_d+p_g}{2}) - D{KL}(p_g||\frac{p_d+p_g}{2}) \
   &= 2*log(2) - 2*JSD(p_d||p_g)
 \end{align*}
 $$
 
 where $D_{KL}$ and $JSD$ are KL Divergence and Jenson Shannon Divergence respectively. So, $JSD$ is a non-negative quantity and attains zero when both the distributions are equal. Since, the Generator $G$ wants to maximise the loss function hence the global optimum will attain when $p_g = p_d$ and that's what we wanted.
 
-# Drawback 
-
+# Drawback
 
 The drawback of GANs is sometimes the Generator is able to generate only handful of samples and not able to produce variety of samples. This from of failure is known as Mode Collapse.
