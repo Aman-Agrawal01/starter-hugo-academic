@@ -22,7 +22,7 @@ education:
   courses:
     - course: BS, Mathematics and Scientific Computing
       institution: Indian Institute of Technology, Kanpur
-      year: ""
+      year: 2023
 email: ""
 superuser: true
 highlight_name: true
