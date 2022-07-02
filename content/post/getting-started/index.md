@@ -18,13 +18,12 @@ image:
   placement: 2
   preview_only: false
 ---
-
 Query Model
-=====
+===
 
-In Query Model, our task is to compute the function {{<math>}}$$f(x_1,x_2,....,x_n)$${{<\math>}} by accessing {{<math>}}$$x_i$${{<\math>}} through quering the orcale. Oracles can be thought of as a 'black-box' by which you can access some information regarding the input, we don't really care about the internal setup in black-box, it can be easily constructed. To access input, algorithm is allowed to query the oracle to get information on input. Hence, the aim of the algorithm is to take minimum queries to compute {{<math>}}$$f(x)$${{<\math>}} on any input {{<math>}}$$x$${{<\math>}}. 
+In Query Model, our task is to compute the function $f(x_1,x_2,....,x_n)$ by accessing $x_i$ through quering the orcale. Oracles can be thought of as a 'black-box' by which you can access some information regarding the input, we don't really care about the internal setup in black-box, it can be easily constructed. To access input, algorithm is allowed to query the oracle to get information on input. Hence, the aim of the algorithm is to take minimum queries to compute $f(x)$ on any input $x$. 
 
-A quantum Oracle {{<math>}}$$O_x$${{<\math>}} takes qubit {{<math>}}$$\lvert i \rangle$${{<\math>}} where {{<math>}}$$i\in[n]$${{<\math>}} in binary representation and {{<math>}}$$n\in \mathbb{N}$${{<\math>}} and ancilia qubit {{<math>}}$$\lvert b \rangle$${{<\math>}} and gives {{<math>}}$$\lvert i \rangle$${{<\math>}} and {{<math>}}$$\lvert b \oplus x_i \rangle$${{<\math>}} where {{<math>}}$$x_i$%{{<\math>}} is the {{<math>}}$$i^{th}$${{<\math>}} bit of input {{<math>}}$$x$${{<\math>}}. 
+A quantum Oracle $O_x$ takes qubit $\lvert i \rangle$ where $i\in[n]$ in binary representation and $n\in \mathbb{N}$ and ancilia qubit $\lvert b \rangle$ and gives $\lvert i \rangle$ and $\lvert b \oplus x_i \rangle$ where $x_i$ is the $i^{th}$ bit of input $x$. 
 
 $\begin{gather} O_x \lvert i \rangle \lvert b \rangle = \lvert i \rangle \lvert b \oplus x_i \rangle = (-1)^{b*x_i} \lvert i \rangle \lvert b \rangle\\ \end{gather}$
 
@@ -55,4 +54,4 @@ Secondly, it gives us a bound on time complexity of an algorithm. Finding the ti
 Conclusion 
 ===
 
-So, that's it! Hope you like the blog :) I am planning to write one more blog on a result "the approximate degree gives a lower bound on quantum query complexity".
+So, that's it! Hope you like the blog :) I am planning to write one more blog on a result "the approximate degree gives a lower bound on quantum query complexity". 
