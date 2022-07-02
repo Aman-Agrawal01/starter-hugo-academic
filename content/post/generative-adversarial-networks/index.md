@@ -19,8 +19,8 @@ This blog requires the basic understanding of Probability and Statistics and Neu
 
 Suppose, we are given the samples from a distribution and distribution is unknown to us. These samples could be anything from images to audio. Our aim is to generate more samples that looks like they came from the same distribution. In order to do so, we try to model a distribution that approximates the target distribution.
 
-Basics
-=== 
+# Basics
+
 
 Adversarial refers to conflict/opposition. So, GANs consists of 'adversarial' training between two parties (in our case, the parties would be neural nets) such that we will be able to 'generate' new samples from the data. Those parties are Generator and Discriminator. 
 
@@ -30,13 +30,12 @@ So, this is some kind of Police-Scammer case, where Scammer (Generator) tries to
 
 Why do we want both these parties to get trained? It's because we neither want the tough Discriminator which won't help Generator to progress nor a poor Discriminator by which Generator won't produce realistic samples. 
 
-Notations
-=== 
+## Notations
+ 
 
 Say the data is denoted as $x$. The data underlies under the distribution $p_d$. Let the easy to sample distribution be denoted as $p_z$, distribution transformed be denoted as $p_g$ and the parameters of Generator $G$ and Discriminator $D$ denoted by $\theta_g$ and $\theta_d$ respectively. The loss function is denoted as $\mathcal{L}$.
 
-Loss function 
-=== 
+# Loss function 
 
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
 {{<math>}}
@@ -96,7 +95,7 @@ $$
 
 where $D_{KL}$ and $JSD$ are KL Divergence and Jenson Shannon Divergence respectively. So, $JSD$ is a non-negative quantity and attains zero when both the distributions are equal. Since, the Generator $G$ wants to maximise the loss function hence the global optimum will attain when $p_g = p_d$ and that's what we wanted.
 
-Drawback 
-=== 
+# Drawback 
+
 
 The drawback of GANs is sometimes the Generator is able to generate only handful of samples and not able to produce variety of samples. This from of failure is known as Mode Collapse.
