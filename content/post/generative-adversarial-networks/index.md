@@ -54,7 +54,7 @@ $$
 
 Analysis
 
-Let's see why this works. First, let's check what is the optimal discriminator for us. Fix teh Generator $G$. 
+Let's see why this works. First, let's check what is the optimal discriminator for us. Fix the Generator $G$. 
 {{<math>}}
 $$ 
   \mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]
