@@ -46,7 +46,7 @@ $$
 
 {{< math >}}
 $$
- = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]
+ = \mathbb{E}_{x \sim p*d(x)}[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]
 $$
 {{< /math >}}
 
