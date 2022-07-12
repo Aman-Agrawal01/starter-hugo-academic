@@ -39,12 +39,12 @@ Let's use BCE (Binary Cross-Entropy) loss in this case.
 
 {{< math >}}
 $$
-\mathcal{L}(\theta*g,\theta_d)  = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))] 
+\mathcal{L}(\theta*g,\theta*d)  = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))] 
 $$
 {{< /math >}}
 {{< math >}} 
 $$
-  = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{z \sim p_Z(z)}[-log(1-D(G(z)))]
+  = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]
 $$
 {{< /math >}}
 
@@ -52,7 +52,7 @@ The Generator $G$ and Discriminator $D$ play the two-player mini-max game with t
 
 {{< math >}}
 $$ 
-    \max_{G} \min_{D} \mathcal{L}(\theta_g,\theta_d)
+    \max*{G} \min*{D} \mathcal{L}(\theta_g,\theta_d)
 $$
 {{< /math >}}
 
@@ -61,7 +61,7 @@ Analysis
 Let's see why this works. First, let's check what is the optimal discriminator for us. Fix the Generator $G$. 
 {{<math>}}
 $$ 
-  \mathcal{L}(\theta_g,\theta_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))]
+  \mathcal{L}(\theta*g,\theta_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]
 $$
 {{</math>}}
 {{<math>}}
@@ -78,31 +78,32 @@ $$
 Now, let's look at the Generator part. 
 {{<math>}}
 $$ 
-  \mathcal{L}(\theta_g,\theta^\ast_d) = \mathbb{E}_{x \sim p_d(x)}[-log(D^\ast(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D^\ast(x))]
+  \mathcal{L}(\theta_g,\theta^\ast_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D^\ast(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D^\ast(x))]
 $$
 {{</math>}}
 {{<math>}}
 $$ 
-  = \mathbb{E}_{x \sim p_d(x)}[-log(p_d(x))+log(p_d(x)+p_g(x))] 
+  = \mathbb{E}*{x \sim p_d(x)}\[-log(p_d(x))+log(p_d(x)+p_g(x))] 
 $$
 {{</math>}}
 {{<math>}}
 $$ 
-+ \mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))]
-$$
-{{</math>}}
-{{<math>}}
-$$ 
-  = 2log(2) - D_{KL}(p_d||\frac{p_d+p_g}{2}) - D_{KL}(p_g||\frac{p_d+p_g}{2})
-$$
-{{<\math>}}
-{{<math>}}
-$$
-  = 2log(2) - 2JSD(p_d||p_g)
-$$
-{{</math>}}
-where $D_{KL}$ and $JSD$ are KL Divergence and Jenson Shannon Divergence respectively. So, $JSD$ is a non-negative quantity and attains zero when both the distributions are equal. Since, the Generator $G$ wants to maximise the loss function hence the global optimum will attain when $p_g = p_d$ and that's what we wanted.
 
-## Drawback
+* \mathbb{E}*{x \sim p_g(x)}\[-log(p_g(x))+log(p_d(x)+p_g(x))]
+  $$
+  {{</math>}}
+  {{<math>}}
+  $$ 
+    = 2log(2) - D*{KL}(p*d||\frac{p_d+p_g}{2}) - D*{KL}(p*g||\frac{p_d+p_g}{2})
+  $$
+  {{<\math>}}
+  {{<math>}}
+  $$
+    = 2log(2) - 2JSD(p_d||p_g)
+  $$
+  {{</math>}}
+  where $D*{KL}$ and $JSD$ are KL Divergence and Jenson Shannon Divergence respectively. So, $JSD$ is a non-negative quantity and attains zero when both the distributions are equal. Since, the Generator $G$ wants to maximise the loss function hence the global optimum will attain when $p_g = p_d$ and that's what we wanted.
+
+# Drawback
 
 The drawback of GANs is sometimes the Generator is able to generate only handful of samples and not able to produce variety of samples. This from of failure is known as Mode Collapse.
