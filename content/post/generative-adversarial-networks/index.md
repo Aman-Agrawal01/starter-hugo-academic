@@ -39,7 +39,11 @@ Let's use BCE (Binary Cross-Entropy) loss in this case.
 
 {{< math >}}
 $$
-\mathcal{L}(\theta*g,\theta_d)  = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))] \\ 
+\mathcal{L}(\theta*g,\theta_d)  = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{x \sim p_g(x)}[-log(1-D(x))] 
+$$
+{{< /math >}}
+{{< math >}} 
+$$
   = \mathbb{E}_{x \sim p_d(x)}[-log(D(x))]+\mathbb{E}_{z \sim p_Z(z)}[-log(1-D(G(z)))]
 $$
 {{< /math >}}
@@ -79,8 +83,12 @@ $$
 {{</math>}}
 {{<math>}}
 $$ 
-  = \mathbb{E}_{x \sim p_d(x)}[-log(p_d(x))+log(p_d(x)+p_g(x))] + \\ 
-\mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))]
+  = \mathbb{E}_{x \sim p_d(x)}[-log(p_d(x))+log(p_d(x)+p_g(x))] 
+$$
+{{</math>}}
+{{<math>}}
+$$ 
++ \mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))]
 $$
 {{</math>}}
 {{<math>}}
