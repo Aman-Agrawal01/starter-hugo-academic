@@ -27,4 +27,4 @@ email: ""
 superuser: true
 highlight_name: true
 ---
-I am currently a junior undergrad from [Indian Institute of Technology, Kanpur](https://www.iitk.ac.in/) majoring in [Mathematics and Scientific Computing](https://www.iitk.ac.in/math/).
+I am currently a senior undergrad from [Indian Institute of Technology, Kanpur](https://www.iitk.ac.in/) majoring in [Mathematics and Scientific Computing](https://www.iitk.ac.in/math/).
