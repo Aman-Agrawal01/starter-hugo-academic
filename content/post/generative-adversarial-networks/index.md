@@ -90,7 +90,7 @@ $$
 {{<math>}}
 $$ 
 
-* \mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))]
++ \mathbb{E}_{x \sim p_g(x)}[-log(p_g(x))+log(p_d(x)+p_g(x))]
   $$
   {{</math>}}
   {{<math>}}
