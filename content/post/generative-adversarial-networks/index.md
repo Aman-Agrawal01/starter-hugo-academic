@@ -37,9 +37,9 @@ Say the data is denoted as $x$. The data underlies under the distribution $p_d$.
 
 Let's use BCE (Binary Cross-Entropy) loss in this case. 
 
-$$ 
+$
 \mathcal{L}(\theta*g,\theta_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]
-$$
+$
 
 
 {{< math >}}
