@@ -39,9 +39,13 @@ Let's use BCE (Binary Cross-Entropy) loss in this case.
 
 {{<math>}}
 $$ 
-\mathcal{L}(\theta*g,\theta_d) &=& \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]
+\mathcal{L}(\theta*g,\theta_d) = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{x \sim p*g(x)}\[-log(1-D(x))]
+$$
+{{<\math>}}
 
-& = & \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]
+{{<math>}}
+$$
+ = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]
 $$
 {{<\math>}}
 
@@ -52,7 +56,6 @@ $$
 $$
 {{<\math>}}
 
-## 
 Analysis
 
 Let's see why this works. First, let's check what is the optimal discriminator for us. Fix teh Generator $G$. 
