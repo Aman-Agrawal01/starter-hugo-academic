@@ -3,8 +3,9 @@ title: Generative Adversarial Networks
 subtitle: Generative Adversarial Networks or in short GAN's have the most
   interesting and appealing applications in my opinion ranging from generating
   new samples for data augmentation to create deepfakes or transforming images
-  from one domain to the other domain. So, I thought of writing about this and
-  appreciate the math behind it.
+  from one domain to the other domain. One thing which amazes me about the
+  working of GANs is that we can show some provable guarantees! So, I thought of
+  writing about this and appreciate the math behind it.
 date: 2022-07-02T14:06:24.202Z
 draft: false
 featured: false
