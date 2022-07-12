@@ -43,18 +43,19 @@ $$
 $$
 {{< \math >}}
 
-{{<math>}}
+{{< math >}}
 $$
  = \mathbb{E}*{x \sim p*d(x)}\[-log(D(x))]+\mathbb{E}*{z \sim p_Z(z)}\[-log(1-D(G(z)))]
 $$
-{{<\math>}}
+{{< \math >}}
 
 The Generator $G$ and Discriminator $D$ play the two-player mini-max game with the loss function $\mathcal{L}$. Generator wants $D(G(z))$ to be close to 1 while Discriminator $D$ wants it to close to 0 and $D(x)$ close to 1. So, $G$ wants to maximise the $\mathcal{L}$ while $D$ wants to minimise $\mathcal{L}$.
-{{<math>}}
+
+{{< math >}}
 $$ 
     \max*{G} \min*{D} \mathcal{L}(\theta_g,\theta_d)
 $$
-{{<\math>}}
+{{< \math >}}
 
 Analysis
 
