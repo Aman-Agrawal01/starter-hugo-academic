@@ -66,7 +66,7 @@ $$
 {{</math>}}
 {{<math>}}
 $$ 
-  = \int_x p_d(x)(-log(D(x))) + p_g(x)(-log(1-D(x))) ,dx 
+  = \int_x p_d(x)(-log(D(x))) + p_g(x)(-log(1-D(x))) dx 
 $$
 {{</math>}}
 Now, differentiating this integral with respect to $D(x)$ and equating with zero gives the optimal Discriminator $D^\ast(x)$. (Exercise for the reader). Assume the paramters of $D^\ast(x)$ be $\theta^\ast_d$.
