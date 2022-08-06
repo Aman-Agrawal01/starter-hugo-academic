@@ -13,7 +13,9 @@ image:
 
 * There are couple of blogs which are pretty interesting to look at. 
 
-  * Andrej Karpathy - <https://karpathy.github.io/>
+  * Andrej Karpathy - <https://karpathy.github.io/> 
+
+    * I really enjoyed this talk :) - <https://skillsmatter.com/skillscasts/6611-visualizing-and-understanding-recurrent-networks>
   * Christopher Olah - <https://colah.github.io/>  
 * This website has a great list of university courses - <https://deep-learning-drizzle.github.io/> 
 
