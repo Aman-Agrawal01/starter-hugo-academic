@@ -1,7 +1,8 @@
 ---
 title: Resources
 date: 2022-08-06T20:38:55.925Z
-summary: A curated list of resources on machine learning and quantum computing.
+summary: A curated list of resources on machine learning, quantum computing,
+  finance etc.
 draft: false
 featured: false
 image:
