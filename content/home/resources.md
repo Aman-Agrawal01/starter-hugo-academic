@@ -1,5 +1,5 @@
 ---
-widget: resources
+widget: events
 widget_id: Resources
 headless: true
 weight: 10
