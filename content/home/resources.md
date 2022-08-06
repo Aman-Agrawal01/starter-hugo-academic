@@ -3,6 +3,7 @@ widget: events
 widget_id: Resources
 headless: true
 weight: 10
+title: Resources
 active: true
 design:
   columns: "2"
