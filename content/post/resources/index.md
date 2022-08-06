@@ -8,7 +8,16 @@ image:
   focal_point: Smart
   preview_only: false
 ---
-## Deep Learning 
-\begin{itemize}
-\item \href{https://colah.github.io/}{https://colah.github.io/}
-\end{itemize}
+## Deep Learning
+
+* There are couple of blogs which are pretty interesting to look at. 
+
+  * Andrej Karpathy - <https://karpathy.github.io/>
+  * Christopher Olah - <https://colah.github.io/>  
+* This website has a great list of university courses - <https://deep-learning-drizzle.github.io/> 
+
+## Quantum Computing 
+
+* Quantum Computation and Quantum Information by Michael Nielsen and Issac Chuang. 
+* Quantum Algorithms Lecture Notes by Andrew Childs - <http://www.cs.umd.edu/~amchilds/qa/> 
+* Quantum Complexity Theory Lecture Notes by Scott Aaronson - <https://ocw.mit.edu/courses/6-845-quantum-complexity-theory-fall-2010/pages/lecture-notes/>
